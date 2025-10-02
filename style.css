@@ -4,8 +4,51 @@
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: rgb(210, 203, 218);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:  center;
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+}
+.info-p{
+padding: 30px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 22px;
+min-width: 300px;
+max-width: 500px;
+text-align: center;
+
+
+}
+.container{
+height: auto;
+background-color: rgb(38, 1, 80);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-size: 22px;
+min-width: 300px;
+max-width: 500px;
+text-align: center;
+color: rgb(229, 219, 219);
+}
+
+.buttons {
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#food-btn,
+#hobby-btn,
+#workout-btn {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+    background-color: rgb(38, 1, 80);
+    color: beige;
 }
