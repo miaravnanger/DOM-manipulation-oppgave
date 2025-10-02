@@ -6,7 +6,7 @@ const foods = [
   "En skikkelig taco-kveld",
   "Hjemmelaget suppe",
   "Burger med fries",
-  "Pannekaker til middag",
+  "Pannekaker",
   "Pasta carbonara",
   "Grillet kylling med salat",
   "Vegansk curry",
@@ -131,9 +131,13 @@ mainSection.appendChild(reset);
 
 const resetBtn= document.querySelector("#reset-btn");
 
-resetBtn.addEventListener("click", resetMe);
-
 function resetMe() {
-container.textContent = ``;
+foodResult.textContent = "";
+hobbyResult.textContent = "";
+workoutResult.textContent = "";
+
+
 
 }
+
+resetBtn.addEventListener("click", resetMe);
