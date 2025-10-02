@@ -40,7 +40,7 @@ const workouts = [
 ];
 
 //lage en hovedseksjon med et paragraf som forteller hva nettsiden gjør,
-// klasseliste for styling
+// legg til klasselister for styling
 // /fyll inn textcontent
 
 //targeter knapper og div for å manipulere de
@@ -48,10 +48,10 @@ const foodBtn = document.querySelector("#food-btn");
 const hobbyBtn = document.querySelector("#hobby-btn");
 const workoutBtn = document.querySelector("#workout-btn");
 
-const buttons = document.querySelector(".buttons");
+const buttonDiv = document.querySelector(".buttons");
 
-//legge eventlistener på knappene
-//lage en hoveedseksjon, lage et <p> med info om hva nettsiden gjør, gi de klasseliste, textcontent og append de + knappene til nettsiden.
+
+//lage en hoveedseksjon, lage et <p> med info om hva nettsiden gjør, gi de klasseliste, textcontent og appende alt til nettsiden.
 
 const mainSection = document.createElement("section");
 mainSection.classList.add("main-section");
@@ -64,14 +64,11 @@ paragraph.textContent = `Er du lei av å planlegge dagene dine?
 document.body.append(mainSection);
 mainSection.append(paragraph);
 
-//lag en div container som skal vise resultat
-
+//div container som skal vise resultat
 const container = document.createElement("div");
 container.classList.add("container");
 
-//vente med å appende til alt innholdet er appendet til diven
-
-//lage p for matresultat, hobbyresultat og treningsresultat
+//lage p for matresultat, hobbyresultat og treningsresultat og gi de klasselister, appender alt
 const foodResult = document.createElement("p");
 foodResult.classList.add("results");
 
@@ -81,21 +78,21 @@ hobbyResult.classList.add("results");
 const workoutResult = document.createElement("p");
 workoutResult.classList.add("results");
 
-mainSection.append(buttons); //flytter div-en med knappene inn i main section
+mainSection.append(buttonDiv); //flytter div-en med knappene inn i main section
 container.append(foodResult, hobbyResult, workoutResult);
 mainSection.append(container);
 
-// //finne tilfeldige indexer fra de forskjellige arrayene og lagrer de i nye variabler
+//få tilfeldige indexer fra de forskjellige arrayene og lagre de i nye variabler
 let randomFood;
 let randomHobby;
 let randomWorkout;
 
 //lage funksjoner som tar tilfeldige indexer fra de forskjellige arrayene, og putter resultatet i de riktige paragrafene i diven. Legger også til eventlistener på knappene
 function generateFood() {
-  randomFood = Math.floor(Math.random() * foods.length);
+  randomFood = Math.floor(Math.random() * foods.length); //tilfeldig index fra arrayet, plasserer det i variabelen jeg laget over
   for (let i = 0; i < foods.length; i++) {
-    if (i === randomFood) {
-      foodResult.textContent = `Til middag kan du ha ${foods[i].toLowerCase()}`;
+    if (i === randomFood) { //hvis i = randomFood, endre textcontent til foodResult til valgfri setning + den tilfeldige stringen
+      foodResult.textContent = `Til middag kan du ha ${foods[i].toLowerCase()}`; 
     }
   }
 }
@@ -126,12 +123,12 @@ function generateWorkout() {
 
 workoutBtn.addEventListener("click", generateWorkout);
 
-//targeter resetknappen for å plassere den på bunnen av siden
+//targeter resetknappen + div for å manipulere og style
 const reset = document.querySelector(".reset");
 mainSection.appendChild(reset);
 
 const resetBtn= document.querySelector("#reset-btn");
-
+//lager fuksjon som tømmer innholder til de forskjellige resultatene fra tidligere
 function resetMe() {
 foodResult.textContent = "";
 hobbyResult.textContent = "";
@@ -140,5 +137,5 @@ workoutResult.textContent = "";
 
 
 }
-
+//lager eventlistener til reset knappen
 resetBtn.addEventListener("click", resetMe);
