@@ -1,4 +1,4 @@
-//ide: dagforslag: Trykk på en knapp og få generert en plan for dagen, mat, hobby/aktivitet og trening
+//ide: dagplanlegger: Trykk på en knapp og få generert en plan for dagen, mat, hobby/aktivitet og trening
 
 const foods = [
   "Pizza med masse ost",
@@ -39,14 +39,15 @@ const workouts = [
   "Spille fotball eller en ballidrett",
 ];
 
-//lage en hovedseksjon med et paragraf som forteller hva nettsiden gjør, og lag klasseliste for styling + fyll inn textcontent
+//lage en hovedseksjon med et paragraf som forteller hva nettsiden gjør,
+// klasseliste for styling
+// /fyll inn textcontent
 
-//targete knappnene
+//targeter knapper og div for å manipulere de
 const foodBtn = document.querySelector("#food-btn");
 const hobbyBtn = document.querySelector("#hobby-btn");
 const workoutBtn = document.querySelector("#workout-btn");
 
-//targete div'ene med knappene for å kunne plassere de i seksjonen jeg lager etterpå
 const buttons = document.querySelector(".buttons");
 
 //legge eventlistener på knappene
